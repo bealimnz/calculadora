@@ -1,0 +1,21 @@
+site_name: Calculando números
+repo_url: https://github.com/bealimnz/calculadora
+repo_name: Calculadora
+edit_uri: tree/main/docs
+
+nav:
+  - Início: index.md
+  - Recursos:
+    - Calculadora Interativa: calculadora.md
+    - Sobre o Projeto: sobre.md
+
+theme:
+  name: material
+  language: pt-BR
+  logo: assets/calculadora.png
+  favicon: assets/calculadora.png
+
+markdown_extensions:
+  - attr_list
+extra_css:
+  - stylesheet/extra.css
