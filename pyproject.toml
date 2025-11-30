@@ -3,13 +3,13 @@ name = "calculadora"
 version = "0.1.0"
 description = ""
 authors = [
-    {name = "Your Name",email = "you@example.com"}
+    {name = "bea",email = "balimnz@gmail.com"}
 ]
 readme = "README.md"
 requires-python = ">=3.13,<4.0"
 dependencies = [
-    # Dependências de runtime (produção) movidas para um grupo de desenvolvimento,
-    # ou omitidas se não houver dependências de produção.
+    # Dependências de runtime (produção) devem ir aqui.
+    # Neste projeto, não há dependências de produção.
 ]
 
 [tool.poetry]
@@ -32,3 +32,30 @@ doc = [
     "mkdocstrings (>=1.0.0,<2.0.0)",
     "mkdocstrings-python (>=2.0.0,<3.0.0)"
 ]
+
+[tool.pytest.ini_options]
+# CONFIGURAÇÃO CORRIGIDA: Informa ao Pytest onde encontrar os arquivos de teste
+testpaths = [
+    "tests",
+]
+addopts = "--doctest-modules"
+
+[tool.isort]
+profile = "black"
+line_length = 79
+
+[tool.taskipy.tasks]
+# Tarefas de formatação e ordenação (Verificação)
+lint = "blue --check . && isort --check-only ."
+
+# Tarefas de formatação e ordenação (Aplicação de Correções)
+format = "blue . && isort ."
+
+# Executa os testes unitários e mede a cobertura de código
+test = "pytest --cov=src/calculadora -vv"
+
+# Inicia o servidor de documentação
+docs = "mkdocs serve"
+
+# Tarefa de lint antiga (mantida por referência)
+lint1 = "blue --check --diff . && isort --check --diff ."
