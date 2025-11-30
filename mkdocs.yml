@@ -15,7 +15,13 @@ theme:
   logo: assets/calculadora.png
   favicon: assets/calculadora.png
 
-markdown_extensions:
-  - attr_list
 extra_css:
   - stylesheet/extra.css
+markdown_extensions:
+  - attr_list
+
+plugins:
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]
