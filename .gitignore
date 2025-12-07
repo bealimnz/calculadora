@@ -169,9 +169,11 @@ poetry.toml
 
 # ruff
 .ruff_cache/
-
+beagitkey
 # LSP config files
 pyrightconfig.json
+git_pull.sh
+git_push.sh
 
 # End of https://www.toptal.com/developers/gitignore/api/python
 
